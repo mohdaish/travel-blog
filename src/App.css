@@ -1443,3 +1443,18 @@ color: #111;
     width: 100%;
   }
 }
+.footer-subscribe-btn {
+  background: #ffcc00;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: large;
+}
+
+.footer-subscribe-btn:hover {
+  background: #ffd633;
+  transform: scale(1.05);
+}

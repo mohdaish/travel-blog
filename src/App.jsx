@@ -16,6 +16,7 @@ import "./App.css";
 function App() {
   const [showUD, setShowUD] = useState(false);
   const location = useLocation();
+  const hideFooter = location.pathname === "/subscribe";
 const showBackButton =
   location.pathname.startsWith("/city") ||
   location.pathname === "/journeys"||
@@ -54,12 +55,7 @@ const showBackButton =
         <Route path="/subscribe" element={<Subscribe />} />
       </Routes>
 {/* </div> */}
-      {!isHomePage && (
-        <>
-         
-          <Footer onRestrictedClick={openPopup} />
-        </>
-      )}
+    {!hideFooter && <Footer onRestrictedClick={openPopup} />}
 
       {showUD && (
         <UnderDevelopment onClose={() => setShowUD(false)} />

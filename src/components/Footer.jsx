@@ -1,5 +1,8 @@
+import { useNavigate } from "react-router-dom";
 export default function Footer({ onRestrictedClick }) {
+  const navigate = useNavigate();
   return (
+
     <footer className="footer">
       <div className="container footer-grid">
 
@@ -17,10 +20,12 @@ export default function Footer({ onRestrictedClick }) {
           <h4>Explore</h4>
           <ul>
             <li onClick={onRestrictedClick}>Hotels</li>
-            <li onClick={onRestrictedClick}>Trip Ideas</li>
-            <li onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-              Destination
-            </li>
+           <li onClick={() => navigate("/trip-ideas")}>
+  Trip Ideas
+</li>
+
+           <li onClick={() => navigate("/")}>Destination</li>
+           
             <li onClick={onRestrictedClick}>Experiences</li>
           </ul>
         </div>
@@ -29,7 +34,10 @@ export default function Footer({ onRestrictedClick }) {
         <div className="footer-col">
           <h4>Stories</h4>
           <ul>
-            <li onClick={onRestrictedClick}>Journeys</li>
+            
+<li onClick={() => navigate("/journeys")}>
+  Journeys
+</li>
             <li onClick={onRestrictedClick}>Travel Blog</li>
             <li onClick={onRestrictedClick}>Tips & Hacks</li>
           </ul>
@@ -40,9 +48,14 @@ export default function Footer({ onRestrictedClick }) {
           <h4>Stay Connected</h4>
 
          <p>Get travel inspiration & updates</p>
-<button className="subscribe-btn">
-            Subscribe
-          </button>
+<li>
+  <button 
+    className="footer-subscribe-btn"
+    onClick={() => navigate("/subscribe")}
+  >
+    Subscribe ✉️
+  </button>
+</li>
           {/* SOCIAL */}
           <div className="socials">
             <span title="Website">🌐</span>
