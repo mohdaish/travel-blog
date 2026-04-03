@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Trending from "../components/Trending";
 import Bestsellers from "../components/Bestsellers";
-import Highlights from "../components/Highlights";
+import Journeys from "../components/Journeys";
 
 import Article from "../components/Article";
 import Footer from "../components/Footer";
@@ -25,7 +25,7 @@ export default function Home() {
       <Trending />
       <Bestsellers />
 
-      <Highlights />
+      <Journeys />
      
       <Article />
 

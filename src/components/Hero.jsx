@@ -1,51 +1,44 @@
+import { useNavigate } from "react-router-dom";
+export default function Hero() {
+   const navigate = useNavigate();
 
-export default function Hero({ onSearchClick }){
-   
+  const handleScroll = () => {
+    navigate("/");
+
+    setTimeout(() => {
+      const section = document.getElementById("explore-section");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100); // wait for page render
+  };
   return (
     <>
-    <div className="hero">
-      <div className="overlay">
+      <div className="hero">
+        <div className="overlay">
 
-        {/* Top small badge */}
-        <div className="hero-badge">
-          ✈️ Sight Seeing
-        </div>
-
-        {/* Main heading */}
-        <h1>
-          Sight Seeing, Activities & Attractions <br />
-          <span>- 50% Off</span>
-        </h1>
-
-        {/* Floating Search Box */}
-        <div className="search-container">
-
-          <div className="search-item">
-            <label>Where to?</label>
-            <input type="text" placeholder="Search by place / attraction" />
+          <div className="hero-badge">
+            🌍 Travel Stories & Guides
           </div>
 
-          <div className="divider"></div>
+          <h1>
+            Explore the World <br />
+            <span>Discover Places, Stories & Experiences</span>
+          </h1>
 
-          <div className="search-item">
-            <label>Trip Date</label>
-            <input type="date" />
-          </div>
+          <p className="hero-description">
+            From breathtaking international destinations to hidden gems across India, 
+            find inspiration for your next unforgettable journey.
+          </p>
 
-          <button className="search-btn" onClick={onSearchClick}>
-            🔍
-          </button>
+          <button className="hero-cta" onClick={handleScroll}>
+          Start Exploring ↓
+        </button>
+<div className="hero-extra">
+  ✨ 50+ destinations • 🧭 Curated guides • 🎧 Travel stories
+</div>
         </div>
-
-        {/* Bottom strip */}
-        <p className="hero-bottom-text">
-          Best Prices | Free Cancellation | Earn rewards
-        </p>
-
       </div>
-    </div>
-    
-
     </>
   );
 }

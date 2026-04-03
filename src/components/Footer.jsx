@@ -7,8 +7,8 @@ export default function Footer({ onRestrictedClick }) {
         <div className="footer-col">
           <h2 className="footer-logo">TravelBlog</h2>
           <p>
-            Discover the world with curated travel experiences, best deals,
-            and unforgettable adventures.
+           Inspiring journeys, travel stories, and curated guides to help you
+            explore the world in a better way.
           </p>
         </div>
 
@@ -17,9 +17,9 @@ export default function Footer({ onRestrictedClick }) {
           <h4>Explore</h4>
           <ul>
             <li onClick={onRestrictedClick}>Hotels</li>
-            <li onClick={onRestrictedClick}>Cabs</li>
+            <li onClick={onRestrictedClick}>Trip Ideas</li>
             <li onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-              Sightseeing
+              Destination
             </li>
             <li onClick={onRestrictedClick}>Experiences</li>
           </ul>
@@ -27,32 +27,22 @@ export default function Footer({ onRestrictedClick }) {
 
         {/* SUPPORT */}
         <div className="footer-col">
-          <h4>Support</h4>
+          <h4>Stories</h4>
           <ul>
-            <li onClick={onRestrictedClick}>Help Center</li>
-            <li onClick={onRestrictedClick}>Cancellation</li>
-            <li onClick={onRestrictedClick}>FAQs</li>
+            <li onClick={onRestrictedClick}>Journeys</li>
+            <li onClick={onRestrictedClick}>Travel Blog</li>
+            <li onClick={onRestrictedClick}>Tips & Hacks</li>
           </ul>
         </div>
 
         {/* CONTACT */}
         <div className="footer-col">
-          <h4>Contact</h4>
+          <h4>Stay Connected</h4>
 
-          <div className="contact-item">
-            <span>Email</span>
-            <a href="mailto:support@travelblog.com">
-              support@travelblog.com
-            </a>
-          </div>
-
-          <div className="contact-item">
-            <span>Phone</span>
-            <a href="tel:+919999999999">
-              +91 99999 99999
-            </a>
-          </div>
-
+         <p>Get travel inspiration & updates</p>
+<button className="subscribe-btn">
+            Subscribe
+          </button>
           {/* SOCIAL */}
           <div className="socials">
             <span title="Website">🌐</span>

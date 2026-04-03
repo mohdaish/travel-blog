@@ -1,12 +1,15 @@
-import { useState } from "react";
-
+import { useParams, useNavigate } from "react-router-dom";
 
 export default function Trending() {
-  const [activeCity, setActiveCity] = useState("Singapore");
+  const navigate = useNavigate();
+  const { cityName } = useParams();
+  const activeCity = cityName;
+
 const data = {
  Singapore: [
   {
     name: "Gardens by Bay",
+    desc: "A futuristic park with iconic Supertrees and skyline views.",
     img: "https://res.cloudinary.com/ds8enhd9j/image/upload/v1775053210/Supertree_Grove_2C_Gardens_by_the_Bay_2C_Singapore_-_20120712-02_zekdsw.jpg"
   },
   {
@@ -78,16 +81,39 @@ const data = {
   Dubai: [
 
   ],
+  Goa:[
+    {
+    name: "Baga Beach",
+    img: "https://res.cloudinary.com/ds8enhd9j/image/upload/v1775228622/baga-sea-beach_gdh449.jpg"
+  },
+  {
+    name: "Club Cubana",
+    img: "https://res.cloudinary.com/ds8enhd9j/image/upload/v1775228693/club-cubana-goa_f9gxq6.jpg"
+  },
+  {
+    name: "Basilica of Bom Jesus",
+    img: "https://res.cloudinary.com/ds8enhd9j/image/upload/v1775228721/basilica-born-jesus-borea-jezuchi-bajilika-old-goa-india_u16tdt.jpg"
+  },
+  {
+    name: "Dudhsagar Falls",
+    img: "https://res.cloudinary.com/ds8enhd9j/image/upload/v1775228762/dudhsagar-falls_zged5p.jpg"
+  }
+  ]
 };
 
   return (
     <section className="trending">
+  
       <div className="container">
-        <h2>
-          Trending Activities – <span>50% Off</span>
-        </h2>
+        <h2 className="city-title">
+  Things to Do in <span>{activeCity}</span>
+</h2>
 
-        <div className="tabs">
+<p className="city-subtitle">
+  Discover top attractions and unforgettable experiences
+</p>
+
+        {/* <div className="tabs">
   {Object.keys(data).map((city) => (
     <span
       key={city}
@@ -97,11 +123,13 @@ const data = {
       {city}
     </span>
   ))}
-</div>
+</div> */}
 
       <div className="grid">
-  {data[activeCity].map((item, index) => (
-    <div className="card-img" key={index}>
+  {data[activeCity]?.map((item, index) => (
+    <div className="card-img" key={index}  onClick={() =>
+                navigate(`/city/${cityName}/place/${item.name}`)
+              }>
       <img src={item.img} alt={item.name} />
       <div className="overlay-text">{item.name}</div>
     </div>
